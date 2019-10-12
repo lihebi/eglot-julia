@@ -10,7 +10,7 @@
   :type 'string
   :group 'julia-config)
 
-(defcustom julia-default-environment "~/.julia/environment/v1.1"
+(defcustom julia-default-environment "~/.julia/environment/v1.2"
   "The default julia environment"
   :type 'string
   :group 'julia-config)
@@ -40,11 +40,13 @@
 
 (defun julia/get-language-server-invocation (interactive)
   `("julia"
-    ,(expand-file-name "~/.emacs.d/lisp/eglot-julia/eglot.jl")
+    ;; FIXME use platform independent name
+    ,(expand-file-name "~/.emacs.d/straight/repos/eglot-julia/eglot.jl")
     ,(julia/get-environment (buffer-file-name))
     ,(julia/get-depot-path)))
 
 ;; Setup eglot with julia
+;; FIXME autoload??
 (with-eval-after-load 'eglot
   (setq eglot-connect-timeout 100)
   (add-to-list 'eglot-server-programs
