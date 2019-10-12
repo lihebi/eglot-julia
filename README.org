@@ -1,0 +1,6 @@
+#+TITLE: Julia with Eglot
+
+From https://github.com/julia-vscode/LanguageServer.jl/wiki/Emacs
+
+@non-Jedi didn't have a repo yet, this is the temporary repo for my
+personal use.
